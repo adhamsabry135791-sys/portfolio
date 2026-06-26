@@ -74,10 +74,10 @@
             cursor: pointer;
         }
         .contact-link:hover {
-            background-color: #e0f7fa; /* Light blue highlight on hover */
+            background-color: #e0f7fa; 
             border-color: #00ced1;
             color: #008080;
-            transform: translateX(5px); /* Slight movement to the right when hovered */
+            transform: translateX(5px); 
         }
         .contact-icon {
             margin-right: 10px;
@@ -95,9 +95,9 @@
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 20px;
-            display: inline-flex; /* Keeps the background wrapping tightly around the text */
+            display: inline-flex; 
             align-items: center;
-            background-color: #e0f7fa; /* Light blue highlight matching your photo */
+            background-color: #e0f7fa; 
             padding: 8px 15px;
             border-radius: 4px;
             color: #1a1a1a;
@@ -122,26 +122,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* CRITICAL: This keeps the zoomed image inside the box */
+            overflow: hidden; 
         }
+        
+        /* Set to CONTAIN so the robot doesn't get cut off */
         .media-box img {
             width: 100%;
             height: 100%;
             object-fit: contain; 
-            transition: transform 0.4s ease-in-out; /* Smooth transition for the zoom */
+            transition: transform 0.4s ease-in-out; 
         }
-        /* The Zoom Effect */
         .media-box:hover img {
-            transform: scale(1.1); /* Zooms the image in by 10% when the mouse hovers */
+            transform: scale(1.1); 
         }
         
         .video-box {
             background-color: #000; 
         }
-        .video-box video {
+        /* Style for the YouTube iframe */
+        .video-box iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: none;
         }
 
         /* Text Columns Grid */
@@ -180,7 +182,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <div class="header-container">
         <div class="header-left">
             <h1 class="header-name">ADHAM SABRY</h1>
@@ -188,12 +189,10 @@
         </div>
         <div class="header-divider"></div>
         <div class="header-right">
-            <!-- Interactive Contact Links -->
             <a href="mailto:adhamsabry135791@gmail.com" class="contact-link">
                 <span class="contact-icon">✉️</span> adhamsabry135791@gmail.com
             </a>
-            <!-- REMEMBER TO REPLACE YOUR_VANITY_URL BELOW -->
-            <a href="https://www.linkedin.com/in/adham-sabry-505b66314" target="_blank" class="contact-link">
+            <a href="https://www.linkedin.com/in/YOUR_VANITY_URL" target="_blank" class="contact-link">
                 <span class="contact-icon">🔗</span> LinkedIn Profile
             </a>
             <a href="https://wa.me/201279159392" target="_blank" class="contact-link">
@@ -202,33 +201,21 @@
         </div>
     </div>
 
-    <!-- Main Portfolio Content -->
-    
-    <!-- Project 1: Swarm Robotics -->
     <div class="project-card">
-        <!-- Highlighted Title -->
         <div class="project-title">SwarmMap: Multi-Robot Topographical Surveying Swarm <span>✔</span></div>
         
-        <!-- Media Progression -->
         <div class="media-container">
-            <!-- CAD Photo -->
             <div class="media-box">
                 <img src="Picture1.png" alt="SolidWorks CAD Design of Rover">
             </div>
-            <!-- Real Photo -->
             <div class="media-box">
                 <img src="Picture3.jpg" alt="Fabricated 3-Robot Swarm in the Field">
             </div>
-            <!-- Video -->
             <div class="media-box video-box">
-                <video controls>
-                    <source src="your-video-file.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe src="https://www.youtube.com/embed/utKxTat-Y3I?si=cWyBuBLaDOlidLvW" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Story & Technical Details -->
         <div class="info-container">
             <div class="info-column">
                 <h4 class="info-heading">What?</h4>
