@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechatronics Engineering Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            max-width: 1200px; /* Keeps the portfolio from stretching too wide on large screens */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Header Styles */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+        .header-left {
+            flex: 2;
+        }
+        .header-name {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+        }
+        .header-title {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 5px;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+        .header-divider {
+            width: 2px;
+            height: 80px;
+            background-color: #333;
+            margin: 0 30px;
+        }
+        .header-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            margin-bottom: 60px;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .project-title span {
+            color: #008080; /* Teal checkmark */
+            margin-left: 10px;
+        }
+        
+        /* Media Grid */
+        .media-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            height: 250px; /* Fixed height for uniformity */
+        }
+        .media-box {
+            flex: 1;
+            background-color: #f8f9fa;
+            border: 1px solid #eaeaea;
+            border-radius: 4px; /* Slight rounding for a modern look */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Ensures images don't spill out */
+        }
+        .media-box img, .media-box video, .media-box iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Crops media perfectly to fit the box */
+        }
+        .video-box {
+            background-color: #000; /* Black background for video pillarboxing */
+        }
+
+        /* Text Columns Grid (What, How, Results) */
+        .info-container {
+            display: flex;
+            gap: 20px;
+        }
+        .info-column {
+            flex: 1;
+            border: 2px solid #00ced1; /* Cyan border matching your reference */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .info-heading {
+            font-weight: bold;
+            color: #008080;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .info-column ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        .info-column ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="header-left">
+            <h1 class="header-name">[YOUR NAME]</h1>
+            <p class="header-title">Mechatronics Engineering at Ain Shams University</p>
+        </div>
+        <div class="header-divider"></div>
+        <div class="header-right">
+            <div>✉️ email@example.com</div>
+            <div>🔗 linkedin.com/in/yourprofile</div>
+            <div>📞 +20 1X XXXX XXXX</div>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-title">SwarmMap: Multi-Robot Topographical Surveying Swarm <span>✔</span></div>
+        
+        <div class="media-container">
+            <div class="media-box">
+                <img src="Picture3.png" alt="SolidWorks CAD Design of Rover">
+            </div>
+            <div class="media-box">
+                <img src="Picture1.jpg" alt="Fabricated 3-Robot Swarm in the Field">
+            </div>
+            <div class="media-box video-box">
+                <video controls>
+                    <source src="your-video-file.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-column">
+                <h4 class="info-heading">What?</h4>
+                <ul>
+                    <li>Designed and fabricated a decentralized swarm system consisting of three autonomous rovers for topographical surveying.</li>
+                    <li>Implemented dynamic area division (Voronoi partitioning) ensuring fault tolerance; if one rover gets stuck, the remaining robots adapt to complete the mission.</li>
+                    <li>Engineered the system to autonomously detect, navigate around, and handle both static and dynamic obstacles in unstructured outdoor environments.</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h4 class="info-heading">How?</h4>
+                <ul>
+                    <li>Modeled the mechanical chassis and a custom trailing-arm suspension system in <strong>SolidWorks</strong>, ensuring continuous ground contact and dividing torque evenly across all four wheels.</li>
+                    <li>Developed the low-level control loop using an <strong>ESP32</strong> microcontroller integrated with Hall effect encoders for precise motor odometry.</li>
+                    <li>Deployed <strong>ROS2 (Humble)</strong> on Ubuntu for high-level autonomous navigation, fine-tuning Nav2 parameters for reliable swarm coordination.</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h4 class="info-heading">Results</h4>
+                <ul>
+                    <li>Successfully deployed the fully fabricated 3-robot physical swarm in a real-world, off-road testing environment.</li>
+                    <li>Achieved resilient, decentralized area coverage, proving the concept's viability for reducing manual surveying time.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
