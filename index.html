@@ -6,6 +6,9 @@
     <title>Adham Sabry - Mechatronics Portfolio</title>
     <style>
         /* Global Styles */
+        html {
+            scroll-behavior: smooth; /* Adds a premium sliding effect when buttons are clicked */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
@@ -52,14 +55,14 @@
             margin: 0 30px;
         }
         
-        /* Interactive Contact Buttons */
+        /* Interactive Nav Buttons */
         .header-right {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        .contact-link {
+        .nav-link {
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -73,13 +76,13 @@
             transition: all 0.2s ease-in-out;
             cursor: pointer;
         }
-        .contact-link:hover {
+        .nav-link:hover {
             background-color: #e0f7fa; 
             border-color: #00ced1;
             color: #008080;
             transform: translateX(5px); 
         }
-        .contact-icon {
+        .nav-icon {
             margin-right: 10px;
             font-size: 1.2rem;
         }
@@ -223,7 +226,7 @@
             margin-left: 0 !important;
         }
 
-        /* --- Sheet Metal Gallery Styles --- */
+        /* --- Sheet Metal & Automation Header Styles --- */
         .section-header {
             font-size: 2.2rem;
             font-weight: 900;
@@ -281,6 +284,7 @@
 </head>
 <body>
 
+    <!-- Header Section -->
     <div class="header-container">
         <div class="header-left">
             <div class="logo-container">
@@ -288,26 +292,35 @@
                 <div>
                     <h1 class="header-name">ADHAM SABRY</h1>
                     <p class="header-title">Mechatronics Engineering at Ain Shams University | GPA: 3.1</p>
+                    
+                    <!-- Contact Info moved here so it is not lost! -->
+                    <div style="margin-top: 12px; font-size: 0.95rem; font-weight: 600; display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="mailto:adhamsabry135791@gmail.com" style="color: #555; text-decoration: none;">✉️ adhamsabry135791@gmail.com</a>
+                        <a href="https://wa.me/201279159392" target="_blank" style="color: #555; text-decoration: none;">📞 +20 1279159392</a>
+                        <a href="https://www.linkedin.com/in/adham-sabry-505b66314" target="_blank" style="color: #008080; text-decoration: none;">🔗 LinkedIn Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="header-divider"></div>
+        
+        <!-- Interactive Navigation Menu -->
         <div class="header-right">
-            <a href="mailto:adhamsabry135791@gmail.com" class="contact-link">
-                <span class="contact-icon">✉️</span> adhamsabry135791@gmail.com
+            <a href="#robotics" class="nav-link">
+                <span class="nav-icon">🤖</span> Robotics Projects
             </a>
-            <a href="https://www.linkedin.com/in/adham-sabry-505b66314" target="_blank" class="contact-link">
-                <span class="contact-icon">🔗</span> LinkedIn Profile
+            <a href="#sheet-metal" class="nav-link">
+                <span class="nav-icon">⚙️</span> Sheet Metal Gallery
             </a>
-            <a href="https://wa.me/201279159392" target="_blank" class="contact-link">
-                <span class="contact-icon">📞</span> +20 1279159392
+            <a href="#automation" class="nav-link">
+                <span class="nav-icon">🏭</span> Industrial Automation
             </a>
         </div>
     </div>
-    </div>
 
-    <!-- Core Robotics Section Header -->
-    <div class="section-header" style="margin-top: 20px;">Robotics & Control Systems</div>
+    <!-- CORE ROBOTICS SECTION -->
+    <div id="robotics" class="section-header" style="margin-top: 20px;">Robotics & Control Systems</div>
 
     <div class="project-card">
         <div class="project-title">SwarmMap: Multi-Robot Topographical Surveying Swarm <span>✔</span></div>
@@ -538,7 +551,9 @@
         </div>
     </div>
 
-    <div class="section-header">Sheet Metal Design Gallery</div>
+
+    <!-- SHEET METAL GALLERY SECTION -->
+    <div id="sheet-metal" class="section-header">Sheet Metal Design Gallery</div>
     
     <div class="gallery-grid">
         
@@ -572,7 +587,9 @@
 
     </div>
 
-    <div class="section-header" style="margin-top: 40px;">Industrial Automation & Simulation</div>
+
+    <!-- INDUSTRIAL AUTOMATION SECTION -->
+    <div id="automation" class="section-header" style="margin-top: 40px;">Industrial Automation & Simulation</div>
 
     <div class="project-card">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
@@ -620,7 +637,7 @@
         </div>
     </div>
 
-    <div class="project-card">
+   <div class="project-card">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
             <div class="project-title" style="margin-bottom: 0;">Digital Twin Factory Simulation (Unity) <span>✔</span></div>
             <a href="https://drive.google.com/drive/folders/1DlQLTu7kpj0viOihfBGvQf5i8W7ALAel" target="_blank" class="code-btn">
