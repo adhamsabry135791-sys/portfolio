@@ -437,5 +437,51 @@
         </div>
     </div>
     
+<div class="project-card">
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <div class="project-title" style="margin-bottom: 0;">Rotary Inverted Pendulum (Furuta) <span>✔</span></div>
+            <a href="Furuta_Pendulum_Report.pdf" target="_blank" class="code-btn">
+                <span>📄</span> View Project Report
+            </a>
+        </div>
+        
+        <div class="media-container">
+            <div class="media-box">
+                <img src="project5-cad.png" alt="SolidWorks CAD Design of Furuta Pendulum">
+            </div>
+            <div class="media-box">
+                <img src="project5-real.png" alt="Fabricated Furuta Pendulum Setup">
+            </div>
+            <div class="media-box video-box">
+                <iframe src="https://www.youtube.com/embed/t3oDs3Kc1NM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="info-container">
+           <div class="info-column">
+                <h4 class="info-heading">What?</h4>
+                <ul>
+                    <li>Designed and built a Furuta Pendulum (rotary inverted pendulum) to demonstrate advanced nonlinear control and active balancing mechanisms.</li>
+                    <li>Engineered the system to perform an autonomous "swing-up" maneuver from a resting downward position and maintain robust stability in the upright, inverted position against external disturbances.</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h4 class="info-heading">How?</h4>
+                <ul>
+                    <li>Designed and fabricated the mechanical rotary arm and pendulum linkages, ensuring low-friction joints for accurate dynamic modeling.</li>
+                    <li>Integrated high-resolution rotary encoders to precisely measure the angular positions of both the driven horizontal arm and the unactuated vertical pendulum.</li>
+                    <li>Developed an energy-based swing-up algorithm, seamlessly transitioning into a custom-tuned <strong>Linear Quadratic Regulator (LQR)</strong> control scheme to stabilize the pendulum at its peak.</li>
+                </ul>
+            </div>
+            <div class="info-column">
+                <h4 class="info-heading">Results</h4>
+                <ul>
+                    <li>Successfully built the physical system and tuned the state-feedback control matrices.</li>
+                    <li>Achieved a flawless transition between the nonlinear swing-up phase and the LQR stabilization phase, maintaining a perfect balance with minimal steady-state error.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
