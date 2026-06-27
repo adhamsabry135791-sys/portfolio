@@ -6,6 +6,60 @@
     <title>Adham Sabry - Mechatronics Portfolio</title>
     <style>
         /* Global Styles */
+        /* --- Sheet Metal Gallery Styles --- */
+        .section-header {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-top: 80px;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #00ced1;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        .gallery-card {
+            background-color: #fff;
+            border: 2px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .gallery-title {
+            background-color: #e0f7fa;
+            color: #1a1a1a;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #eaeaea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .gallery-image-box {
+            height: 350px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .gallery-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease-in-out;
+        }
+        .gallery-card:hover .gallery-image-box img {
+            transform: scale(1.05); /* Smooth zoom effect */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
@@ -481,6 +535,39 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="section-header">Sheet Metal Design Gallery</div>
+    
+    <div class="gallery-grid">
+        
+        <div class="gallery-card">
+            <div class="gallery-title">Slotted Sheet Metal Assembly <span>⚙️</span></div>
+            <div class="gallery-image-box">
+                <img src="Screenshot 2026-06-27 224100.jpg" alt="SolidWorks Sheet Metal Assembly">
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-title">Industrial Sheet Metal Shelving <span>⚙️</span></div>
+            <div class="gallery-image-box">
+                <img src="Screenshot 2026-06-27 224302.jpg" alt="SolidWorks Shelving Unit">
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-title">Custom Sheet Metal Door <span>⚙️</span></div>
+            <div class="gallery-image-box">
+                <img src="door-project.jpg" alt="SolidWorks Sheet Metal Door">
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-title">Commercial Stainless Steel Sink <span>⚙️</span></div>
+            <div class="gallery-image-box">
+                <img src="Screenshot 2026-06-27 225022.jpg" alt="SolidWorks Stainless Steel Sink and Prep Table">
+            </div>
+        </div>
+
     </div>
 
 </body>
