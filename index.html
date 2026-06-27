@@ -7,7 +7,7 @@
     <style>
         /* Global Styles */
         html {
-            scroll-behavior: smooth; /* Adds a premium sliding effect when buttons are clicked */
+            scroll-behavior: smooth; 
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,6 +55,24 @@
             margin: 0 30px;
         }
         
+        /* Contact Info Row */
+        .contact-info-row {
+            margin-top: 15px; 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+        .contact-info-row a {
+            color: #555; 
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info-row a:hover {
+            color: #008080;
+        }
+
         /* Interactive Nav Buttons */
         .header-right {
             flex: 1;
@@ -89,15 +107,22 @@
 
         /* Project Card Styles */
         .project-card {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
         
-        /* Highlighted Project Title */
+        /* Highlighted Project Title & Buttons */
+        .title-wrapper {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
         .project-title {
             font-size: 1.5rem;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin: 0;
             display: inline-flex; 
             align-items: center;
             background-color: #e0f7fa; 
@@ -109,8 +134,27 @@
             color: #008080;
             margin-left: 10px;
         }
+        .code-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .code-btn:hover {
+            background-color: #555;
+        }
+        .code-btn span {
+            margin-right: 8px;
+            color: #fff !important;
+        }
         
-        /* Media Grid with Hover Zoom Effect */
+        /* Media Grid */
         .media-container {
             display: flex;
             gap: 20px;
@@ -127,8 +171,6 @@
             justify-content: center;
             overflow: hidden; 
         }
-        
-        /* Set to CONTAIN so the robot doesn't get cut off */
         .media-box img {
             width: 100%;
             height: 100%;
@@ -136,13 +178,11 @@
             transition: transform 0.4s ease-in-out; 
         }
         .media-box:hover img {
-            transform: scale(1.1); 
+            transform: scale(1.05); 
         }
-        
         .video-box {
             background-color: #000; 
         }
-        /* Style for the YouTube iframe */
         .video-box iframe {
             width: 100%;
             height: 100%;
@@ -202,31 +242,8 @@
             letter-spacing: -1px;
             box-shadow: 0 4px 10px rgba(0, 128, 128, 0.2);
         }
-        
-        /* Source Code Button */
-        .code-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #333;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-left: 15px;
-            transition: background-color 0.2s;
-        }
-        .code-btn:hover {
-            background-color: #555;
-        }
-        .code-btn span {
-            margin-right: 8px;
-            color: #fff !important;
-            margin-left: 0 !important;
-        }
 
-        /* --- Sheet Metal & Automation Header Styles --- */
+        /* --- Section Headers & Gallery --- */
         .section-header {
             font-size: 2.2rem;
             font-weight: 900;
@@ -280,11 +297,84 @@
         .gallery-card:hover .gallery-image-box img {
             transform: scale(1.05);
         }
+
+        /* =========================================
+           MOBILE RESPONSIVENESS (PHONES & TABLETS)
+           ========================================= */
+        @media (max-width: 900px) {
+            body {
+                padding: 20px; /* Less empty space on edges */
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .header-divider {
+                display: none; /* Hide vertical line */
+            }
+            .logo-container {
+                flex-direction: column;
+            }
+            .contact-info-row {
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header-name {
+                font-size: 2.2rem;
+            }
+            .header-right {
+                width: 100%;
+            }
+            .nav-link {
+                justify-content: center;
+            }
+
+            /* Stack Images vertically */
+            .media-container {
+                flex-direction: column;
+                height: auto; /* Allow box to expand naturally */
+            }
+            .media-box {
+                height: 250px; /* Give each image/video its own height */
+                width: 100%;
+            }
+
+            /* Stack Text vertically */
+            .info-container {
+                flex-direction: column;
+            }
+
+            /* Stack Gallery and adjust sizing */
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-image-box {
+                height: 250px;
+            }
+            .section-header {
+                font-size: 1.8rem;
+                margin-top: 50px;
+            }
+            
+            /* Stack project titles and buttons */
+            .title-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .project-title {
+                font-size: 1.2rem;
+                justify-content: space-between;
+            }
+            .code-btn {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <div class="header-container">
         <div class="header-left">
             <div class="logo-container">
@@ -293,11 +383,10 @@
                     <h1 class="header-name">ADHAM SABRY</h1>
                     <p class="header-title">Mechatronics Engineering at Ain Shams University | GPA: 3.1</p>
                     
-                    <!-- Contact Info moved here so it is not lost! -->
-                    <div style="margin-top: 12px; font-size: 0.95rem; font-weight: 600; display: flex; gap: 20px; flex-wrap: wrap;">
-                        <a href="mailto:adhamsabry135791@gmail.com" style="color: #555; text-decoration: none;">✉️ adhamsabry135791@gmail.com</a>
-                        <a href="https://wa.me/201279159392" target="_blank" style="color: #555; text-decoration: none;">📞 +20 1279159392</a>
-                        <a href="https://www.linkedin.com/in/adham-sabry-505b66314" target="_blank" style="color: #008080; text-decoration: none;">🔗 LinkedIn Profile</a>
+                    <div class="contact-info-row">
+                        <a href="mailto:adhamsabry135791@gmail.com">✉️ adhamsabry135791@gmail.com</a>
+                        <a href="https://wa.me/201279159392" target="_blank">📞 +20 1279159392</a>
+                        <a href="https://www.linkedin.com/in/adham-sabry-505b66314" target="_blank" style="color: #008080;">🔗 LinkedIn Profile</a>
                     </div>
                 </div>
             </div>
@@ -305,7 +394,6 @@
         
         <div class="header-divider"></div>
         
-        <!-- Interactive Navigation Menu -->
         <div class="header-right">
             <a href="#robotics" class="nav-link">
                 <span class="nav-icon">🤖</span> Robotics Projects
@@ -319,11 +407,12 @@
         </div>
     </div>
 
-    <!-- CORE ROBOTICS SECTION -->
     <div id="robotics" class="section-header" style="margin-top: 20px;">Robotics & Control Systems</div>
 
     <div class="project-card">
-        <div class="project-title">SwarmMap: Multi-Robot Topographical Surveying Swarm <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">SwarmMap: Multi-Robot Topographical Surveying Swarm <span>✔</span></div>
+        </div>
         
         <div class="media-container">
             <div class="media-box">
@@ -365,8 +454,8 @@
     </div>
 
     <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">Driver Drowsiness Safety System <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">Driver Drowsiness Safety System <span>✔</span></div>
             <a href="https://github.com/adhamsabry135791-sys/Driver-Drowsiness-System/tree/main" target="_blank" class="code-btn">
                 <span>💻</span> View Source Code
             </a>
@@ -412,8 +501,8 @@
     </div>
 
     <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">Visual Inspection Robotic Arm (6-DOF) <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">Visual Inspection Robotic Arm (6-DOF) <span>✔</span></div>
             <a href="robotic_arm.pdf" target="_blank" class="code-btn">
                 <span>📄</span> View Project Report
             </a>
@@ -459,8 +548,8 @@
     </div>
 
     <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">6-DOF Robotic Manipulator & Gripper <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">6-DOF Robotic Manipulator & Gripper <span>✔</span></div>
             <a href="https://github.com/adhamsabry135791-sys/Gripper-Arm-CAD" target="_blank" class="code-btn">
                 <span>⚙️</span> View CAD Models
             </a>
@@ -506,8 +595,8 @@
     </div>
     
     <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">Rotary Inverted Pendulum (Furuta) <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">Rotary Inverted Pendulum (Furuta) <span>✔</span></div>
             <a href="Furuta_Pendulum_Report.pdf" target="_blank" class="code-btn">
                 <span>📄</span> View Project Report
             </a>
@@ -552,7 +641,6 @@
     </div>
 
 
-    <!-- SHEET METAL GALLERY SECTION -->
     <div id="sheet-metal" class="section-header">Sheet Metal Design Gallery</div>
     
     <div class="gallery-grid">
@@ -588,12 +676,11 @@
     </div>
 
 
-    <!-- INDUSTRIAL AUTOMATION SECTION -->
     <div id="automation" class="section-header" style="margin-top: 40px;">Industrial Automation & Simulation</div>
 
     <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">Automated PLC Assembly Line & HMI <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">Automated PLC Assembly Line & HMI <span>✔</span></div>
             <a href="Factory_IO_Report.pdf" target="_blank" class="code-btn">
                 <span>📄</span> View Report
             </a>
@@ -638,8 +725,8 @@
     </div>
 
    <div class="project-card">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div class="project-title" style="margin-bottom: 0;">Digital Twin Factory Simulation (Unity) <span>✔</span></div>
+        <div class="title-wrapper">
+            <div class="project-title">Digital Twin Factory Simulation (Unity) <span>✔</span></div>
             <a href="https://drive.google.com/drive/folders/1DlQLTu7kpj0viOihfBGvQf5i8W7ALAel" target="_blank" class="code-btn">
                 <span>💻</span> View Unity Assets
             </a>
